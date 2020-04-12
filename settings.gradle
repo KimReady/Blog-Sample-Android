@@ -1,0 +1,2 @@
+rootProject.name='Blog-Sample-Android'
+include ':app'
