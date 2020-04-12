@@ -1,4 +1,8 @@
 <resources>
-    <string name="app_name">Blog-Sample-Android</string>
+    <string name="app_name">Ready Story</string>
     <string name="hello_text">https://readystory.tistory.com/</string>
+
+    <string name="appbar_scrolling_view_behavior" translatable="false">
+        com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior
+    </string>
 </resources>
