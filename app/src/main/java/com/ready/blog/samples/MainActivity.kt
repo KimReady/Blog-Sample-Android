@@ -1,10 +1,8 @@
 package com.ready.blog.samples
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.lifecycle.AndroidViewModel
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.ViewModelProviders
 
 class MainActivity : AppCompatActivity() {
 
@@ -39,5 +37,6 @@ class MainActivity : AppCompatActivity() {
 
         hasParamAndroidViewModel = ViewModelProvider(this, HasParamAndroidViewModelFactory(application, sampleParam))
             .get(HasParamAndroidViewModel::class.java)
+
     }
 }
