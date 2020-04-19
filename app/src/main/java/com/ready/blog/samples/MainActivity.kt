@@ -12,19 +12,17 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        /* ViewModel 사용한 버전 */
-        val viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
-        viewModel.getInputText().observe(this, Observer<String> { newStr ->
-            sample_text.text = newStr
-        })
+        val viewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory()).get(MainViewModel::class.java)
 
         ok_button.setOnClickListener {
-            viewModel.updateText(edit_text.text.toString())
+            viewModel.updateText(edit_text.text.toString().toInt())
+            result_text.text = when (radio_group.checkedRadioButtonId) {
+                R.id.radio_circle -> viewModel.areaOfCircle.value!!.toString()
+                R.id.radio_square -> viewModel.areaOfSquare.value!!.toString()
+                else -> throw IllegalArgumentException()
+            }
         }
 
-        /* ViewModel 사용하지 않은 버전 */
-//        ok_button.setOnClickListener {
-//            sample_text.text = edit_text.text
-//        }
+        radio_group.check(R.id.radio_circle)
     }
 }
