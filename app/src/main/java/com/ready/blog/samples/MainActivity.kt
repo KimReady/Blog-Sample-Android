@@ -16,13 +16,14 @@ class MainActivity : AppCompatActivity() {
 
         ok_button.setOnClickListener {
             viewModel.updateText(edit_text.text.toString().toInt())
-            result_text.text = when (radio_group.checkedRadioButtonId) {
-                R.id.radio_circle -> viewModel.areaOfCircle.value!!.toString()
-                R.id.radio_square -> viewModel.areaOfSquare.value!!.toString()
-                else -> throw IllegalArgumentException()
-            }
         }
 
-        radio_group.check(R.id.radio_circle)
+        viewModel.areaOfCircle.observe(this, Observer<Double> { area ->
+            circle_area_text.text = "원 넓이 : $area"
+        })
+
+        viewModel.areaOfSquare.observe(this, Observer<Int> { area ->
+            square_area_text.text = "정사각형 넓이 : $area"
+        })
     }
 }

@@ -28,37 +28,24 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <RadioGroup
-        android:id="@+id/radio_group"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/ok_button">
-
-        <RadioButton
-            android:id="@+id/radio_circle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/radio_circle_text" />
-
-        <RadioButton
-            android:id="@+id/radio_square"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/radio_square_text" />
-    </RadioGroup>
-
     <TextView
-        android:id="@+id/result_text"
+        android:id="@+id/circle_area_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/hello_text"
+        android:text="원 넓이 : "
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/square_area_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="정사각형 넓이 : "
+        android:layout_marginTop="20dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/circle_area_text" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
