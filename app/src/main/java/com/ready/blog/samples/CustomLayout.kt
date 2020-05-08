@@ -16,7 +16,8 @@ class CustomLayout(context: Context) : FrameLayout(context) {
 
     override fun onInterceptTouchEvent(ev: MotionEvent?): Boolean {
         Log.d("TouchEventTest", "called onInterceptTouchEvent() in CustomLayout")
-        return super.onInterceptTouchEvent(ev)
+//        return super.onInterceptTouchEvent(ev)
+        return true
     }
 
     override fun onTouchEvent(event: MotionEvent?): Boolean {
