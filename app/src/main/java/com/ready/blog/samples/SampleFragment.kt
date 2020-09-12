@@ -17,14 +17,20 @@ class SampleFragment : Fragment() {
     ): View? {
         return inflater.inflate(R.layout.fragment_sample, container, false)
     }
+    private lateinit var callback: OnBackPressedCallback
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
-        val callback: OnBackPressedCallback = object : OnBackPressedCallback(true) {
+        callback = object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
                 sample_text.text = "occur back pressed event!!"
             }
         }
         requireActivity().onBackPressedDispatcher.addCallback(this, callback)
+    }
+
+    override fun onDetach() {
+        super.onDetach()
+        callback.remove()
     }
 }
