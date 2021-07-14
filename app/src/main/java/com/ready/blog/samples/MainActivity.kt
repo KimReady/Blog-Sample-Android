@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun navigateTo(fragment: Fragment) {
-        Log.d(LOG_TAG, "add() - ${fragment.javaClass.simpleName}")
+        Log.d(LOG_TAG, "replace() - ${fragment.javaClass.simpleName}")
         supportFragmentManager.beginTransaction()
             .add(R.id.fragment_container_view, fragment)           // 1. add
 //            .replace(R.id.fragment_container_view, fragment)     // 2. replace

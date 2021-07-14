@@ -42,6 +42,11 @@ class SecondFragment : Fragment() {
         }
     }
 
+    override fun onViewStateRestored(savedInstanceState: Bundle?) {
+        super.onViewStateRestored(savedInstanceState)
+        Log.d(LOG_TAG, "onViewStateRestored")
+    }
+
     override fun onStart() {
         super.onStart()
         Log.d(LOG_TAG, "onStart")
@@ -60,6 +65,11 @@ class SecondFragment : Fragment() {
     override fun onStop() {
         super.onStop()
         Log.d(LOG_TAG, "onStop")
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        Log.d(LOG_TAG, "onSaveInstanceState")
     }
 
     override fun onDestroy() {
